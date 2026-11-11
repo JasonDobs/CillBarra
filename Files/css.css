@@ -1,0 +1,231 @@
+/* Applies to every element on the page */
+* {
+    /* Makes padding and borders easier to manage inside element widths */
+    box-sizing: border-box;
+}
+
+/* Styles the whole page */
+body {
+    /* Removes the browser's default spacing around the page */
+    margin: 0;
+
+    /* Sets the main font for the website */
+    font-family: montserrat;
+
+    /* Sets the page background colour to white */
+    background-color: #ffffff;
+}
+
+/* Main purple header/navigation bar */
+.site-header {
+    /* Makes the header stretch across the full width of the page */
+    width: 100%;
+
+    /* Sets the purple background colour */
+    background-color: #512B58;
+
+    /* Adds a dark border around the header */
+    border: 4px solid #222222;
+
+    /* Puts the logo/title and nav links in a row */
+    display: flex;
+
+    /* Vertically centres items inside the header */
+    align-items: center;
+
+    /* Pushes the brand area left and navigation right */
+    justify-content: space-between;
+
+    /* Adds space inside the header */
+    padding: 18px 35px;
+}
+
+/* Holds the logo and website title together */
+.brand-area {
+    /* Places the logo and title side by side */
+    display: flex;
+
+    /* Vertically centres the logo and title */
+    align-items: center;
+
+    /* Adds space between the logo and title */
+    gap: 35px;
+}
+
+/* Styles the clickable logo link */
+.logo-link {
+    /* Keeps the logo neatly aligned */
+    display: inline-flex;
+
+    /* Vertically centres the logo */
+    align-items: center;
+
+    /* Horizontally centres the logo */
+    justify-content: center;
+}
+
+/* Styles the logo image */
+.site-logo {
+    /* Sets the logo width */
+    width: 55px;
+
+    /* Sets the logo height */
+    height: 55px;
+
+    /* Keeps the image from stretching badly */
+    object-fit: contain;
+}
+
+/* Styles the text beside the logo */
+.site-title {
+    /* Makes the title text white */
+    color: #ffffff;
+
+    /* Sets the title text size */
+    font-size: 13px;
+
+    /* Controls the spacing between title lines */
+    line-height: 1.2;
+
+    /* Centres the title text */
+    text-align: center;
+}
+
+/* Removes default spacing from title paragraphs */
+.site-title p {
+    /* Removes default paragraph margins */
+    margin: 0;
+}
+
+/* Holds the navigation menu */
+.main-nav {
+    /* Allows navigation items to align neatly */
+    display: flex;
+
+    /* Vertically centres the navigation */
+    align-items: center;
+}
+
+/* Styles the list that contains the navigation links */
+.nav-list {
+    /* Removes bullet points from the list */
+    list-style: none;
+
+    /* Places navigation links in a row */
+    display: flex;
+
+    /* Vertically centres the links */
+    align-items: center;
+
+    /* Adds space between each link */
+    gap: 8px;
+
+    /* Removes default outside spacing */
+    margin: 0;
+
+    /* Removes default inside spacing */
+    padding: 0;
+}
+
+/* Styles each navigation link */
+.nav-list a {
+    /* Allows padding and size to work nicely */
+    display: inline-block;
+
+    /* Makes the link buttons white */
+    background-color: #ffffff;
+
+    /* Makes the link text dark */
+    color: #111111;
+
+    /* Removes underline from links */
+    text-decoration: none;
+
+    /* Sets the link text size */
+    font-size: 12px;
+
+    /* Makes the link text bold */
+    font-weight: bold;
+
+    /* Adds space inside each button */
+    padding: 12px 18px;
+
+    /* Adds a light border around each button */
+    border: 1px solid #dddddd;
+}
+
+/* Changes navigation links when the mouse is over them */
+.nav-list a:hover {
+    /* Makes the button slightly grey on hover */
+    background-color: #eeeeee;
+}
+
+/* Improves keyboard accessibility when a link is selected */
+.nav-list a:focus {
+    /* Adds a yellow outline for keyboard users */
+    outline: 3px solid #ffcc00;
+
+    /* Adds space between the outline and the link */
+    outline-offset: 3px;
+}
+
+/* Special style for the basket link */
+.basket-link {
+    /* Removes the white button background */
+    background-color: transparent !important;
+
+    /* Makes the basket text white */
+    color: #ffffff !important;
+
+    /* Removes the border */
+    border: none !important;
+
+    /* Makes the basket text slightly smaller */
+    font-size: 11px;
+}
+
+/* Responsive design for tablets and phones */
+@media (max-width: 800px) {
+    /* Adjusts the header on smaller screens */
+    .site-header {
+        /* Stacks the brand area and nav on top of each other */
+        flex-direction: column;
+
+        /* Adds space between stacked sections */
+        gap: 20px;
+
+        /* Reduces padding on smaller screens */
+        padding: 20px;
+    }
+
+    /* Adjusts the logo/title area on smaller screens */
+    .brand-area {
+        /* Stacks the logo and title vertically */
+        flex-direction: column;
+
+        /* Reduces the gap between logo and title */
+        gap: 10px;
+    }
+
+    /* Allows navigation buttons to move onto new lines */
+    .nav-list {
+        /* Lets links wrap instead of overflowing */
+        flex-wrap: wrap;
+
+        /* Centres wrapped links */
+        justify-content: center;
+    }
+
+    /* Makes navigation buttons slightly smaller on small screens */
+    .nav-list a {
+        /* Keeps the font readable */
+        font-size: 12px;
+
+        /* Reduces button padding */
+        padding: 10px 14px;
+    }
+}
+
+h1{
+    text-align: center;
+}
