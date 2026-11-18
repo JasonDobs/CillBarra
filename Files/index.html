@@ -29,8 +29,44 @@
         </ul>
     </nav>
 </header>
-<h1>Welcome to Cill Barra Community Sports Centre</h1>
 
+<section class="hero-intro">
+    <h1>Welcome to Cill Barra Community Sports Centre</h1>
+</section>
+
+<!-- Image slider section -->
+<section class ="slider-container" aria-label="Gym image slider">
+    <!-- Left button -->
+    <button class="slider-button slider-button-left" id="prevBtn" type="button" aria-label="Previous image">
+        &#10094;
+    </button>
+
+    <!-- Clickable image area -->
+    <a href="index.html" class="slider-image-link" aria-label="Go to homepage">
+        <img id="sliderImageOne" src="Images/gym1.jpg" alt="Gym equipment" class="slider-image slider-image-active">
+        <img id="sliderImageTwo" src="Images/gym1.jpg" alt="" class="slider-image">
+    </a>
+
+    <!-- Text shown on top of the image -->
+    <div class="slider-text">
+        <h2 id="sliderTitle">PAYG: Flexible Fitness, Your Way.</h2>
+        <p id="sliderSubtitle">Join Cill Barra Community Gym today. No long-term contracts.</p>
+        <a id="sliderCallToAction" href="Login.html" class="slider-cta">Join Now</a>
+    </div>
+
+    <!-- Right button -->
+    <button class="slider-button slider-button-right" id="nextBtn" type="button" aria-label="Next image">
+        &#10095;
+    </button>
+
+</section>
+
+
+
+
+
+<!-- JavaScript file -->
+<script src="script.js"></script>
 
 
 
