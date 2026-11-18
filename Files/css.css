@@ -328,6 +328,62 @@ h1{
     }
 }
 
+/* Staff cards: name and role on one row, photo below */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px 40px;
+}
+
+.staff-card {
+    background-color: #E5E7EB;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.staff-card__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 20px;
+    margin-bottom: 15px;
+}
+
+.staff-card__header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #000000;
+}
+
+.staff-card__header p {
+    margin: 0;
+    font-size: 16px;
+    color: #1E293B;
+}
+
+.staff-card__photo {
+    width: 120px;
+    aspect-ratio: 4 / 5;
+    background-color: #CBD5E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #475569;
+    font-size: 13px;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+    .staff-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Centres the welcome heading above the slider */
 .hero-intro {
     text-align: center;
@@ -347,7 +403,7 @@ h1{
     width: 100%;
     max-width: 1200px;
     height: 480px;
-    margin: 0 auto;
+    margin: 0 auto 40px;
     overflow: hidden;
     background-color: #222222;
 }
