@@ -29,29 +29,47 @@
 
     // Simple inline icons so no external icon library/request is needed
     const icons = {
-        facebook: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M13.3 21v-7.2h2.2l.3-2.6h-2.5V9.5c0-.75.2-1.25 1.27-1.25h1.36V5.9c-.24-.03-1.05-.1-2-.1-1.98 0-3.33 1.21-3.33 3.43v1.9H8.3v2.6h2.3V21" fill="currentColor" stroke="none"></path></svg>',
-        strava: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6,21 11,9 14,15 17,3"></polyline></svg>',
-        instagram: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"></circle></svg>'
+        facebook: '<svg viewBox="0 0 24 24" width="30" height="50" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M13.3 21v-7.2h2.2l.3-2.6h-2.5V9.5c0-.75.2-1.25 1.27-1.25h1.36V5.9c-.24-.03-1.05-.1-2-.1-1.98 0-3.33 1.21-3.33 3.43v1.9H8.3v2.6h2.3V21" fill="currentColor" stroke="none"></path></svg>',
+        strava: '<svg viewBox="0 0 24 24" width="30" height="50" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6,21 11,9 14,15 17,3"></polyline></svg>',
+        instagram: '<svg viewBox="0 0 24 24" width="30" height="50" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"></circle></svg>'
     };
 
     // Scoped styles for the footer, injected once so css.css does not need to change
     const footerStyles = `
+        html,
+        body {
+            min-height: 100%;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        body > main,
+        body > section:not(.site-footer),
+        .hero-intro {
+            flex: 1 0 auto;
+        }
         .site-footer {
             background-color: #1E293B;
             color: #E2E8F0;
             font-family: montserrat, sans-serif;
-            padding: 35px 40px 20px;
+            padding: 8px 55px 8px;
+            margin-top: auto;
         }
         .site-footer__social {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 32px;
-            margin-bottom: 30px;
+            gap: 48px;
+            margin-bottom: 18px;
         }
         .site-footer__social-link {
             color: #ffffff;
             display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
         }
         .site-footer__social-link:hover,
         .site-footer__social-link:focus {
@@ -62,49 +80,55 @@
             outline-offset: 3px;
         }
         .site-footer__main {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
             align-items: flex-start;
-            flex-wrap: wrap;
             gap: 25px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+        }
+        .site-footer__hours {
+            justify-self: center;
+            margin-left: 0;
         }
         .site-footer__hours-title {
-            margin: 0 0 8px;
-            font-size: 18px;
+            margin: 0 0 5px;
+            font-size: 16px;
             font-weight: 700;
             color: #ffffff;
             display: inline-block;
-            padding-bottom: 6px;
+            padding-bottom: 4px;
             border-bottom: 3px solid #D48C11;
         }
         .site-footer__hours-list {
             list-style: none;
-            margin: 10px 0 0;
+            margin: 6px 0 0;
             padding: 0;
         }
         .site-footer__hours-list li {
             display: flex;
             gap: 16px;
-            font-size: 14px;
-            padding: 2px 0;
+            font-size: 12px;
+            padding: 1px 0;
         }
         .site-footer__day {
             font-weight: 700;
             color: #ffffff;
-            width: 95px;
+            width: 90px;
         }
         .site-footer__time {
             color: #CBD5E1;
         }
         .site-footer__map {
             position: relative;
-            width: 230px;
+            width: 360px;
             max-width: 100%;
-            height: 130px;
+            height: 175px;
             border-radius: 4px;
             overflow: hidden;
             flex-shrink: 0;
+            justify-self: center;
+            grid-column: 3;
+            margin-right: 0;
         }
         .site-footer__map-frame {
             width: 100%;
@@ -125,13 +149,13 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 15px;
-            padding: 15px 0;
+            padding: 8px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.15);
         }
         .site-footer__links a {
             color: #ffffff;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 12px;
         }
         .site-footer__links a:hover,
         .site-footer__links a:focus {
@@ -141,25 +165,32 @@
         .site-footer__project,
         .site-footer__support {
             text-align: center;
-            font-size: 12px;
+            font-size: 11px;
             color: #94A3B8;
-            margin: 4px 0;
+            margin: 3px 0;
         }
         @media (max-width: 800px) {
             .site-footer {
-                padding: 25px 20px 15px;
+                padding: 18px 20px 12px;
+                margin-top: auto;
             }
             .site-footer__main {
+                display: flex;
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+            }
+            .site-footer__hours {
+                margin-left: 0;
             }
             .site-footer__hours-list li {
                 justify-content: center;
             }
             .site-footer__map {
                 width: 100%;
-                max-width: 320px;
+                max-width: 360px;
+                height: 175px;
+                margin-right: 0;
             }
             .site-footer__links {
                 justify-content: center;
